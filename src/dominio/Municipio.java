@@ -1,4 +1,4 @@
-ackage dominio;
+package dominio;
 import java.util.Arrays;
 public class Municipio {
 	private String nombre;
@@ -14,10 +14,12 @@ public class Municipio {
 		this.nombre = "";
 		this.localidades = new Localidad[0]; // Crear un array de localidades vacio
 	}
-	public void calcularNumeroTotalHabitantesMunicipio() {
+	public Municipio(String nombre2) {
+    }
+    public void calcularNumeroTotalHabitantesMunicipio() {
 		int totalHabitantes = 0;
 		for (Localidad localidad : localidades) {
-			this.totalNumeroHabitantesMunicipio += localidad.getNumeroDeHabitantes();
+			this.totalNumeroHabitantesMunicipio += localidad.getTotalNumeroHabitantesMunicipio();
 		}
 	}
 	// Método para agregar una localidad al municipio
@@ -26,7 +28,7 @@ public class Municipio {
 		Localidad[] nuevoArray = new Localidad[localidades.length + 1];
 
 		// Copiar las localidades existentes al nuevo array
-		for (int i = 0; i< localidades.lenght; i++) {
+		for (int i = 0; i< localidades.length; i++) {
 			nuevoArray[i] = localidades[i];
 		}
 		
@@ -46,5 +48,10 @@ public class Municipio {
 			", localidades=" + Arrays.toString(localidades) +
 			", totalNumeroHabitantesMunicipio=" + totalNumeroHabitantesMunicipio +'}';
 	}
+	public int getNumeroTotalDeHabitantes() {
+		return 0;
+	}
+}
+	
 
 
